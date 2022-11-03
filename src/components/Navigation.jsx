@@ -7,7 +7,7 @@ function Navigation() {
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            VoteCoin
+            ReX
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
@@ -15,21 +15,6 @@ function Navigation() {
                 <NavLink className="nav-link" to="/Dashboard">
                   dashboard
                   <span className="sr-only">(current)</span>
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Dashboard">
-                  metamask
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Dashboard">
-                  campaigns
-                </NavLink>
-              </li> 
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Dashboard">
-                  white paper
                 </NavLink>
               </li>
             </ul>
