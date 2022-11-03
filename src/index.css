@@ -1,56 +1,42 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: sans-serif;
   margin: 0;
-  background-color: #e7f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.centered {
-  margin: 3rem auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
-
-.focused {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-}
-
-.btn {
+a {
   text-decoration: none;
-  background-color: teal;
-  color: white;
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid teal;
-  cursor: pointer;
+  color: black;
 }
-
-.btn:hover,
-.btn:active {
-  background-color: #11acac;
-  border-color: #11acac;
-}
-
-.btn--flat {
-  cursor: pointer;
-  font: inherit;
-  color: teal;
-  border: none;
-  background-color: none;
+a:hover {
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.349);
 }
 
-.btn--flat:hover,
-.btn--flat:active {
-  background-color: teal;
-  color: white;
-}
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #11cb30;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #11cb30, #11cb9c);
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #11cb30, #11cb9c)
+  }
+
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
