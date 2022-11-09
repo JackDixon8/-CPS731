@@ -44,7 +44,7 @@ export default function Checkout() {
                       /> */}
                       <div className="flex-column ms-4">
                         <p className="mb-2">Medicine 1</p>
-                        <p className="mb-0">Pharmacy 1</p>
+                        <p className="mb-0">Description 1</p>
                       </div>
                     </div>
                   </th>
@@ -88,12 +88,12 @@ export default function Checkout() {
                         <p className="mb-2">
                             Medicine 2
                         </p>
-                        <p className="mb-0">Pharmacy 2</p>
+                        <p className="mb-0">Description 2</p>
                       </div>
                     </div>
                   </th>
                   <td className="align-middle">
-                    <div class="d-flex flex-row align-items-center">
+                    <div class="d-flex flex-row align-items-center ">
                       <MDBBtn className="px-2" color="link">
                         <MDBIcon fas icon="minus" />
                       </MDBBtn>
@@ -117,7 +117,80 @@ export default function Checkout() {
                     </p>
                   </td>
                 </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="d-flex align-items-center">
+                      <div className="flex-column ms-4">
+                        <p className="mb-2">
+                            Delivery Fee
+                        </p>
+                      </div>
+                    </div>
+                  </th>
+                  <td className="align-middle">
+                  </td>
+                  <td className="align-middle">
+                    <p className="mb-0" style={{ fontWeight: "500" }}>
+                      $5.00
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="d-flex align-items-center">
+                      <div className="flex-column ms-4">
+                        <p className="mb-2">
+                            Subtotal
+                        </p>
+                      </div>
+                    </div>
+                  </th>
+                  <td className="align-middle">
+                  </td>
+                  <td className="align-middle">
+                    <p className="mb-0" style={{ fontWeight: "500" }}>
+                      $27.49
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="d-flex align-items-center">
+                      <div className="flex-column ms-4">
+                        <p className="mb-2">
+                            Tax
+                        </p>
+                      </div>
+                    </div>
+                  </th>
+                  <td className="align-middle">
+                  </td>
+                  <td className="align-middle">
+                    <p className="mb-0" style={{ fontWeight: "500" }}>
+                      $3.57
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="d-flex align-items-center">
+                      <div className="flex-column ms-4">
+                        <p className="mb-0" style={{ fontWeight: "1000" }}>
+                            Total
+                        </p>
+                      </div>
+                    </div>
+                  </th>
+                  <td className="align-middle">
+                  </td>
+                  <td className="align-middle">
+                    <p className="mb-0" style={{ fontWeight: "1000" }}>
+                      $31.06
+                    </p>
+                  </td>
+                </tr>
               </MDBTableBody>
+              <p></p>
             </MDBTable>
           </MDBCol>
         </MDBRow>
@@ -265,7 +338,7 @@ export default function Checkout() {
                             />
                           </MDBRow>
                           <MDBRow>  
-                          <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
+                          <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
                           </MDBRow>    
                         </MDBCol>
                       </MDBRow>
