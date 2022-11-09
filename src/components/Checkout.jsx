@@ -252,8 +252,7 @@ export default function Checkout() {
                               style={{width: "300px"}}
                               placeholder="Province"
                               size="lg"
-                              minlength="3"
-                              maxlength="3"
+                              minLength={2}
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                             <MDBInput
@@ -262,7 +261,7 @@ export default function Checkout() {
                               placeholder="Postal Code"
                               size="lg"
                               minlength="6"
-                              maxlength="6"
+                              maxlength="7"
                             />
                           </MDBRow>
                         </MDBCol>
@@ -297,7 +296,6 @@ export default function Checkout() {
                   style={{ width: "1062px", borderRadius: "40px" }}
                 >
                   <MDBCardBody className="p2-4">
-
                     <MDBCol>
                       <MDBRow>
                         <MDBCol>
