@@ -12,8 +12,8 @@ function Navigation() {
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/Dashboard">
-                  dashboard
+                <NavLink className="nav-link" to="/OrderDetails">
+                  Order Details
                   <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
