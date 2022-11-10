@@ -19,6 +19,24 @@ import {
   ConnectPrescribe
 } from "./components";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDwzDCKDZp5lUR_KMs4PO3ixwZ2Ay_JSR0",
+  authDomain: "rex-cps731.firebaseapp.com",
+  projectId: "rex-cps731",
+  storageBucket: "rex-cps731.appspot.com",
+  messagingSenderId: "912913915010",
+  appId: "1:912913915010:web:c6223bda97e3b51643689b"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 ReactDOM.render(
   <Router>
     <Navigation />
