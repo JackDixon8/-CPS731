@@ -9,12 +9,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "@urbica/react-map-gl": "^1.16.2",
     "history": "^5.1.0",
     "mdb-react-ui-kit": "^5.0.0",
+    "mapbox-gl": "^2.10.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-map-gl": "^7.0.19",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7",
+    "transform-loader": "^0.2.4",
+    "webworkify-webpack": "^1.0.6"
   }
 }
