@@ -18,9 +18,7 @@ export default function Test() {
     zoom={viewport.zoom}
     onViewportChange={setViewport}
   />
-  
-  
-  
+
   );
 }
   

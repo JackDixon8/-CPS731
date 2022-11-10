@@ -22,13 +22,13 @@ a:hover {
 
 .gradient-custom {
   /* fallback for old browsers */
-  background: #11cb30;
+  background: #11cbb2;
   
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #11cb30, #11cb9c);
+  background: -webkit-linear-gradient(to right, #11cbc8, #11c8cb);
   
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #11cb30, #11cb9c)
+  background: linear-gradient(to right, #11cbc8, #11c8cb)
   }
 
   .card-registration .select-input.form-control[readonly]:not([disabled]) {

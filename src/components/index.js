@@ -7,3 +7,4 @@ export { default as Prescribe } from "./Prescribe.jsx";
 export { default as Test } from "./Test";
 export { default as OrderDetails } from "./OrderDetails";
 export { default as CreateAccount } from "./CreateAccount";
+export { default as UserLinkCreateAccount } from "./UserLinkCreateAccount";
