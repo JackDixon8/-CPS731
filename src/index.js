@@ -7,6 +7,8 @@ import {
   Navigation,
   Login,
   MapsPage,
+  OrderDetails,
+  CreateAccount
   Checkout
 } from "./components";
 
@@ -17,6 +19,8 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/mapPage" element={<MapsPage />} />
+      <Route path="/OrderDetails" element={<OrderDetails />} />
+      <Route path="/CreateAccount" element={<CreateAccount />} />
       <Route path="/checkout" element={<Checkout />} />
     </Routes>
 
