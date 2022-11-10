@@ -33,8 +33,8 @@ export default function UserLinkCreateAccount() {
               <p> {' '}</p>
               <MDBTableBody>
                 <MDBCard
-                  className="shadow-2-strong mb-5 mb-lg-0"
-                  style={{ width: "1062px", borderRadius: "40px" }}
+                  className="shadow-2-strong mb-5 mb-lg-0 d-flex"
+                  style={{ width: "100%", borderRadius: "40px" }}
                 >
                   <MDBCardBody className="p2-4">
                     <MDBCol>
@@ -71,7 +71,7 @@ export default function UserLinkCreateAccount() {
             <MDBTableBody>
               <MDBCard
                 className="shadow-2-strong mb-5 mb-lg-0"
-                style={{ width: "1062px", borderRadius: "40px" }}
+                style={{ width: "100%", borderRadius: "40px" }}
               >
                 <MDBCardBody className="p2-4">
                   <MDBCol>
@@ -80,14 +80,14 @@ export default function UserLinkCreateAccount() {
                         <MDBRow>
                           <MDBInput
                             className="mb-10 mb-xl-5"
-                            style={{width: "500px"}}
+                            style={{width: "100%"}}
                             placeholder="Insurance Company"
                             size="lg"
                           />
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
                           <MDBInput
                             className="mb-10 mb-xl-5"
-                            style={{width: "462px"}}
+                            style={{width: "100%"}}
                             placeholder="Health Card #"
                             size="lg"
                             minlength={12}
@@ -97,7 +97,7 @@ export default function UserLinkCreateAccount() {
                         <MDBRow>
                           <MDBInput
                             className="mb-10 mb-xl-5"
-                            style={{width: "500px"}}
+                            style={{width: "100%"}}
                             placeholder="Insurance ID"
                             size="lg"
                             minlength="1"
@@ -106,7 +106,7 @@ export default function UserLinkCreateAccount() {
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
                           <MDBInput
                             className="mb-10 mb-xl-5"
-                            style={{width: "464px"}}
+                            style={{width: "100%"}}
                             placeholder="Insurance Password"
                             size="lg"
                             minlength="4"
@@ -143,14 +143,14 @@ export default function UserLinkCreateAccount() {
               <MDBTableBody>
                 <MDBCard
                   className="shadow-2-strong mb-5 mb-lg-0"
-                  style={{ width: "1062px", borderRadius: "40px" }}
+                  style={{ width: "100%", borderRadius: "40px" }}
                 >
                   <MDBCardBody className="p2-4">
                     <MDBCol>
                       <MDBRow>
                         <MDBCol>
                           <MDBRow>
-                          <NavLink className="nav-link" to="/mapPage" style={{width: "1120px"}}>  
+                          <NavLink className="nav-link" to="/mapPage" style={{width: "100%"}}>  
                           <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
                           </NavLink>
                           </MDBRow>    

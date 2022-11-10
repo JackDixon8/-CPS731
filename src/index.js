@@ -13,7 +13,9 @@ import {
   OrderDetails,
   Checkout,
   CreateAccount,
-  UserLinkCreateAccount
+  UserLinkCreateAccount,
+  ConnectPrescribe
+
   
 } from "./components";
 
@@ -31,6 +33,8 @@ ReactDOM.render(
       <Route path="/validation" element={<Validation />} />
       <Route path="/prescribe" element={<Prescribe />} />
       <Route path="/userLink" element={<UserLinkCreateAccount />} />
+      <Route path="/connect" element={<ConnectPrescribe />} />
+
     </Routes>
 
   </Router>,
