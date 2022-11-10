@@ -7,6 +7,8 @@ import {
   Navigation,
   Login,
   MapsPage,
+  Validation,
+  Prescribe,
   Test,
   OrderDetails,
   Checkout,
@@ -24,6 +26,8 @@ ReactDOM.render(
       <Route path="/OrderDetails" element={<OrderDetails />} />
       <Route path="/CreateAccount" element={<CreateAccount />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/validation" element={<Validation />} />
+      <Route path="/prescribe" element={<Prescribe />} />
     </Routes>
 
   </Router>,
