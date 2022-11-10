@@ -5,19 +5,15 @@ import Navigation from './Navigation';
 
 
 export default function MapsPage() {
- 
 
+    return(
+      <div>
+      <Test> </Test>
 
-  return(
-    <div>
-    <Test> </Test>
+      Test
 
-    Test
-
-    </div>
-);
-
-
+      </div>
+  );
 }
 
 
