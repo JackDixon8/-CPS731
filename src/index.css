@@ -36,7 +36,15 @@ a:hover {
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+
+  .box{
+    background-color: white;
+    color: black;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+  }
