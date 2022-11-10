@@ -12,8 +12,6 @@ import {
   MDBTableHead,
 } from "mdb-react-ui-kit";
 
-
-
 function Prescribe() {
 const [message, setMessage] = useState('');
 
@@ -47,7 +45,6 @@ const handleClick = () => {
                   className="shadow-2-strong mb-5 mb-lg-0"
                   style={{ width: "1062px", borderRadius: "40px" }}
                 >
-                    
                   <MDBCardBody className="p2-4">
                     <MDBCol>
                       <MDBRow>
