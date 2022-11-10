@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   MDBBtn,
   MDBCard,
@@ -15,7 +16,7 @@ import {
 
 export default function Checkout() {
   return (
-    <section className="h-100 h-custom">
+    <section className="h-100 h-custom gradient-custom">
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           {/* Cart */}
@@ -335,8 +336,10 @@ export default function Checkout() {
                               maxlength="3"
                             />
                           </MDBRow>
-                          <MDBRow>  
+                          <MDBRow> 
+                          <NavLink className="nav-link" to="/orderdetails"> 
                           <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
+                          </NavLink>
                           </MDBRow>    
                         </MDBCol>
                       </MDBRow>

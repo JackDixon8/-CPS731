@@ -11,7 +11,7 @@ import {
   Prescribe,
   Test,
   TrackDelivery,
-  BrowsePharmacies
+  BrowsePharmacies,
   OrderDetails,
   Checkout,
   CreateAccount,

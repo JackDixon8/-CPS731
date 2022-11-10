@@ -3,18 +3,16 @@ import Map from 'react-map-gl';
 import Test from './Test';
 import Navigation from './Navigation';
 import './index.css' 
+import { NavLink } from 'react-router-dom';
+import { MDBCol, MDBRow, MDBListGroup, MDBListGroupItem, MDBCheckbox } from 'mdb-react-ui-kit';
 
 
 export default function BrowsePharmacies() {
  
-
-
   return(
-    <div>
+    <div className='gradient-custom'>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <Test> </Test>
-
-   
       </div>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <br></br>
@@ -34,17 +32,38 @@ export default function BrowsePharmacies() {
 
                 
         />
-        <button type="submit">Search</button>
+      <MDBRow>  
+        <NavLink className="nav-link" to="/browsePharmacies">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Search</button>
+        </NavLink>
+      </MDBRow>   
     </form>
     
       </div>
-      <br></br>
-      
-        <br></br>
-        
-        <br></br>
-        <br></br>
-        <br></br>
+
+      <MDBListGroup style={{ minWidth: '22rem' }} light>
+      <MDBListGroupItem tag='label'>
+        <NavLink className="nav-link" to="/checkout">
+        <MDBCheckbox label='Cras justo odio' />
+        </NavLink>
+      </MDBListGroupItem>
+
+      <MDBListGroupItem tag='label'>
+        <MDBCheckbox label='Dapibus ac facilisis in' />
+      </MDBListGroupItem>
+
+      <MDBListGroupItem tag='label'>
+        <MDBCheckbox label='Morbi leo risus' />
+      </MDBListGroupItem>
+
+      <MDBListGroupItem tag='label'>
+        <MDBCheckbox label='Porta ac consectetur ac' />
+      </MDBListGroupItem>
+
+      <MDBListGroupItem tag='label'>
+        <MDBCheckbox label='Vestibulum at eros' />
+      </MDBListGroupItem>
+    </MDBListGroup>
        
       
 

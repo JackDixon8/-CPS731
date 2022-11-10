@@ -14,8 +14,8 @@ import {
 
 export default function Validation() {
   return(
-    <section>
-      <MDBContainer className="py-5 h-100">
+    <section className="gradient-custom">
+      <MDBContainer className="py-5 h-100 ">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
             <MDBTable responsive>

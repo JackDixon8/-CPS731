@@ -12,10 +12,11 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import { NavLink } from 'react-router-dom';
 
-function App() {
+function CreateAccount() {
   return (
-    <MDBContainer fluid>
+    <MDBContainer fluid className='gradient-custom'>
 
       <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
         <MDBCardBody>
@@ -48,8 +49,10 @@ function App() {
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
 
-              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
+              <NavLink className="nav-link" to="/userLink">
 
+              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
+              </NavLink>
             </MDBCol>
 
             <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
@@ -64,4 +67,4 @@ function App() {
   );
 }
 
-export default App;
+export default CreateAccount;

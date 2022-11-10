@@ -25,7 +25,7 @@ const handleClick = () => {
 };
   return (
     <section>
-      <MDBContainer className="py-5 h-100">
+      <MDBContainer className="py-5 h-100 gradient-custom">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
             <MDBTable responsive>

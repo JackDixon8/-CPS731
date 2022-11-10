@@ -13,6 +13,7 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Basic() {
   const [basicModal, setBasicModal] = useState(false);
@@ -22,7 +23,7 @@ export default function Basic() {
   return (
     <>
       <section >
-        <MDBContainer >
+        <MDBContainer className="gradient-custom vh-100">
           <MDBRow className="justify-content-center align-items-center h-100 text-center">
             <MDBCol>
               <MDBBtn color="light"  onClick={toggleShow}>
@@ -90,6 +91,7 @@ export default function Basic() {
                     </MDBModalBody>
 
                     <MDBModalFooter className="d-flex justify-content-center border-top-0 py-4">
+                      <NavLink className="nav-link" to="/trackdelivery">
                       <MDBBtn
                         size="lg"
                         style={{ backgroundColor: "#35558a" }}
@@ -97,6 +99,7 @@ export default function Basic() {
                       >
                         Track your order
                       </MDBBtn>
+                      </NavLink>
                     </MDBModalFooter>
                   </MDBModalContent>
                 </MDBModalDialog>

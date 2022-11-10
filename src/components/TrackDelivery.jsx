@@ -10,7 +10,7 @@ export default function TrackDelivery() {
 
 
   return(
-    <div>
+    <div className='gradient-custom'>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <Test> </Test>
 

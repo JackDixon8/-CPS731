@@ -12,6 +12,7 @@ import {
   MDBTabsPane,
   MDBCheckbox
 } from 'mdb-react-ui-kit';
+import { NavLink } from 'react-router-dom';
 
 export default function ConnectPrescribe() {
   const [basicActive, setBasicActive] = useState('Prescription1');
@@ -86,7 +87,9 @@ export default function ConnectPrescribe() {
       </MDBRow>
 
       <MDBRow>  
+        <NavLink className="nav-link" to="/browsePharmacies">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to Order Details</button>
+        </NavLink>
       </MDBRow>   
 
     </MDBContainer>
