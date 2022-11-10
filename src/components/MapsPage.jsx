@@ -6,8 +6,6 @@ import './index.css'
 
 
 export default function MapsPage() {
- 
-
 
   return(
     <div>
@@ -45,9 +43,7 @@ export default function MapsPage() {
         YOUR MED DOCSSSS ---> THE USER"S MED DOCS
       </div>
     </div>
-);
-
-
+  );
 }
 
 

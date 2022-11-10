@@ -7,9 +7,16 @@ import {
   Navigation,
   Login,
   MapsPage,
+  Validation,
+  Prescribe,
   Test,
   TrackDelivery,
   BrowsePharmacies
+  OrderDetails,
+  Checkout,
+  CreateAccount,
+  UserLinkCreateAccount,
+  ConnectPrescribe
 } from "./components";
 
 ReactDOM.render(
@@ -22,8 +29,13 @@ ReactDOM.render(
       <Route path="/test" element={<Test />} />
       <Route path="/trackDelivery" element={<TrackDelivery />} />
       <Route path="/browsePharmacies" element={<BrowsePharmacies />} />
-    
-
+      <Route path="/OrderDetails" element={<OrderDetails />} />
+      <Route path="/CreateAccount" element={<CreateAccount />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/validation" element={<Validation />} />
+      <Route path="/prescribe" element={<Prescribe />} />
+      <Route path="/userLink" element={<UserLinkCreateAccount />} />
+      <Route path="/connect" element={<ConnectPrescribe />} />
     </Routes>
 
   </Router>,
