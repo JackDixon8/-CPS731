@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Navigation,
   Login,
-  MapsPage
+  MapsPage,
+  Checkout
 } from "./components";
 
 ReactDOM.render(
@@ -16,7 +17,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/mapPage" element={<MapsPage />} />
-
+      <Route path="/checkout" element={<Checkout />} />
     </Routes>
 
   </Router>,
