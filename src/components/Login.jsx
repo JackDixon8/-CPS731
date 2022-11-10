@@ -28,19 +28,14 @@ function Login() {
                   <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
                   <div>
                     <ul className="navbar-nav ml-auto">
-                      <li className="nav-item">
-                        <p>dont have an account?</p> 
-                        <NavLink className="nav-link" to="/CreateAccount" style={{color:"blue"}}>
-                          Register
-                          <span className="sr-only">(current)</span>
-                        </NavLink>
-                      </li>
                     </ul>
                   </div>
                   <hr class="my-4"></hr>
                   <p>or Register with</p>
+                  <NavLink className="nav-link" to="/CreateAccount">
                   <button class="btn btn-lg btn-block btn-primary" style={{backgroundColor: "#dd4b39"}}
                     type="submit"><i class="fab fa-google me-2"></i> Register</button>
+                  </NavLink>
                 </div>
               </div>
             </div>
