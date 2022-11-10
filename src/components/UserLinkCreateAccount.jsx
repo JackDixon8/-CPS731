@@ -33,8 +33,7 @@ export default function UserLinkCreateAccount() {
               <p> {' '}</p>
               <MDBTableBody>
                 <MDBCard
-                  className="shadow-2-strong mb-5 mb-lg-0 "
-                  style={{ width: "100%", borderRadius: "40px" }}
+                  className="shadow-2-strong mb-5 mb-lg-0 d-flex"
                 >
                   <MDBCardBody className="p2-4">
                     <MDBCol>
@@ -144,14 +143,14 @@ export default function UserLinkCreateAccount() {
               <MDBTableBody>
                 <MDBCard
                   className="shadow-2-strong mb-5 mb-lg-0"
-                  style={{ width: "1062px", borderRadius: "40px" }}
+                  style={{ width: "100%", borderRadius: "40px" }}
                 >
                   <MDBCardBody className="p2-4">
                     <MDBCol>
                       <MDBRow>
                         <MDBCol>
                           <MDBRow>
-                          <NavLink className="nav-link" to="/mapPage" style={{width: "1120px"}}>  
+                          <NavLink className="nav-link" to="/mapPage" style={{width: "100%"}}>  
                           <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
                           </NavLink>
                           </MDBRow>    
