@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Basic from "./OrderDetails";
 
 function Navigation() {
   return (
@@ -9,16 +10,7 @@ function Navigation() {
           <NavLink className="navbar-brand" to="/">
             ReX
           </NavLink>
-          <div>
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/OrderDetails">
-                  Order Details
-                  <span className="sr-only">(current)</span>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+          <Basic></Basic>
         </div>
       </nav>
     </div>

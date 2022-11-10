@@ -21,11 +21,11 @@ export default function Basic() {
 
   return (
     <>
-      <section className="vh-100" style={{ backgroundColor: "#35558a" }}>
-        <MDBContainer className="py-5 h-100">
+      <section >
+        <MDBContainer >
           <MDBRow className="justify-content-center align-items-center h-100 text-center">
             <MDBCol>
-              <MDBBtn color="light" size="lg" onClick={toggleShow}>
+              <MDBBtn color="light"  onClick={toggleShow}>
                 <MDBIcon fas icon="info me-2" /> Get information
               </MDBBtn>
               <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
