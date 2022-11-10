@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import './index.css' 
 
 
-export default function MapsPage() {
+export default function BrowsePharmacies() {
  
 
 
@@ -19,31 +19,36 @@ export default function MapsPage() {
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <br></br>
         <br></br>
-
+        <br></br>
         <br></br>
         <br></br>
         <form action="/" method="get">
         <label htmlFor="header-search">
-            <span className="visually-hidden">Med Search</span>
+            <span className="visually-hidden">Search to populate list of Pharmacies</span>
         </label>
         <input
             type="text"
             id="header-search"
-            placeholder="Medication Name"
+            placeholder="Type here"
             name="s" 
+
+                
         />
         <button type="submit">Search</button>
     </form>
+    
       </div>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
       <br></br>
+      
         <br></br>
+        
+        <br></br>
+        <br></br>
+        <br></br>
+       
+      
 
-        <br></br>
-        <br></br>
-
-        YOUR MED DOCSSSS ---> THE USER"S MED DOCS
-      </div>
+      <p style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}> Here is your list of pharamcies with $$$ </p> 
     </div>
 );
 

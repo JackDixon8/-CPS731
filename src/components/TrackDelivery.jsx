@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import './index.css' 
 
 
-export default function MapsPage() {
+export default function TrackDelivery() {
  
 
 
@@ -19,31 +19,24 @@ export default function MapsPage() {
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <br></br>
         <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        DRIVER
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
+        TRIP
         <br></br>
         <br></br>
-        <form action="/" method="get">
-        <label htmlFor="header-search">
-            <span className="visually-hidden">Med Search</span>
-        </label>
-        <input
-            type="text"
-            id="header-search"
-            placeholder="Medication Name"
-            name="s" 
-        />
-        <button type="submit">Search</button>
-    </form>
+        <br></br>
+        <br></br>
+        DETAILS
       </div>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-      <br></br>
-        <br></br>
-
-        <br></br>
-        <br></br>
-
-        YOUR MED DOCSSSS ---> THE USER"S MED DOCS
-      </div>
+      
     </div>
 );
 
