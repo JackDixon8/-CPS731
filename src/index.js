@@ -8,7 +8,7 @@ import {
   Login,
   MapsPage,
   OrderDetails,
-  CreateAccount
+  CreateAccount,
   Checkout
 } from "./components";
 
