@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Navigation,
   Login,
-  MapsPage
+  MapsPage,
+  Test,
 } from "./components";
 
 ReactDOM.render(
@@ -16,6 +17,8 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/mapPage" element={<MapsPage />} />
+      <Route path="/test" element={<Test />} />
+    
 
     </Routes>
 

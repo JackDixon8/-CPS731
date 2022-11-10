@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from 'react';
+import Map from 'react-map-gl';
+import Test from './Test';
+import Navigation from './Navigation';
 
 
+export default function MapsPage() {
+ 
 
-function MapsPage() {
-  return (
-        <div class="vh-100 gradient-custom container-fluid vh-80 py-1">
-          <h1> Maps Page</h1>
-        </div> 
-  );
+
+  return(
+    <div>
+    <Test> </Test>
+
+    Test
+
+    </div>
+);
+
+
 }
 
-export default MapsPage;
+
+
