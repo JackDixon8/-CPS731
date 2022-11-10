@@ -10,6 +10,7 @@ import {
   MDBTable,
   MDBTableBody,
   MDBTableHead,
+  MDBCardImage
 } from "mdb-react-ui-kit";
 
 
@@ -55,50 +56,48 @@ const handleClick = () => {
                           <MDBRow className>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "500px"}}
+                              style={{width: "195%"}}
                               placeholder="Name of Patient"
                               size="lg"
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "464px"}}
+                              style={{width: "180%"}}
                               placeholder="Name of Medication"
                               size="lg"
                             />
                           </MDBRow>
                           <MDBRow>
-                         
                           <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "1016px"}}
+                              style={{width: "397%"}}
                               placeholder="Reason for Prescription"
                               size="lg"
                               minlength="1"
                             />
                           </MDBRow>
-                          
                           <MDBRow>
                           <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "313px"}}
+                              style={{width: "121%"}}
                               placeholder="Dosage #"
                               size="lg"
                               minLength={1}
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
 
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "300px"}}
+                              style={{width: "115%"}}
                               placeholder="Quantity #"
                               size="lg"
                               minLength={1}
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "300px"}}
+                              style={{width: "115%"}}
                               placeholder="# of Refills "
                               size="lg"
                               minlength="1"
@@ -125,6 +124,29 @@ const handleClick = () => {
                   </MDBCardBody>
                 </MDBCard>
               </MDBTableBody>
+            </MDBTable>
+          </MDBCol>        
+        </MDBRow>
+      </MDBContainer>
+      <MDBContainer className="py-5 h-100 ">
+        <MDBRow className="justify-content-center align-items-center h-100">
+          <MDBCol>
+            <MDBTable responsive>
+              <MDBTableHead>
+                <tr>
+                  <th scope="col" className="h2">
+                    Patient Code
+                  </th>
+                  {/* <th scope="col">Format</th> */}
+                  <th scope="col">{' '}</th>
+                  <th scope="col">{' '}</th>
+                </tr>
+              </MDBTableHead>
+              <p> {' '}</p>
+              <MDBRow md='10' lg='6' className='order-1 order-lg-2 d-flex justify-content-center align-items-center'>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <MDBCardImage src='https://cdn.discordapp.com/attachments/1040108437943627877/1040118727968043060/unknown.png' fluid/>
+              </MDBRow>
             </MDBTable>
           </MDBCol>        
         </MDBRow>
