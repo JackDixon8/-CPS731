@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   MDBCard,
   MDBCardBody,
@@ -51,8 +52,7 @@ export default function Validation() {
                               style={{width: "464px"}}
                               placeholder="Pharmacy"
                               size="lg"
-                              minlength="16"
-                              maxlength="16"
+                              minlength="1"
                             />
                           </MDBRow>
                           <MDBRow>
@@ -61,8 +61,8 @@ export default function Validation() {
                               style={{width: "500px"}}
                               placeholder="Employee ID"
                               size="lg"
-                              minlength="5"
-                              maxlength="5"
+                              minlength="1"
+                              maxlength="9"
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
                             <MDBInput
@@ -70,12 +70,13 @@ export default function Validation() {
                               style={{width: "464px"}}
                               placeholder="Employee Password"
                               size="lg"
-                              minlength="3"
-                              maxlength="3"
+                              minlength="4"
                             />
                           </MDBRow>
-                          <MDBRow>  
+                          <MDBRow>
+                          <NavLink className="nav-link" to="/prescribe" style={{width: "1120px"}}>  
                           <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+                          </NavLink>
                           </MDBRow>    
                         </MDBCol>
                       </MDBRow>
@@ -94,7 +95,7 @@ export default function Validation() {
             <MDBTableHead>
               <tr>
                 <th scope="col" className="h2">
-                  Connect Accounts
+                  Connect Insurance
                 </th>
                 {/* <th scope="col">Format</th> */}
                 <th scope="col">{' '}</th>
@@ -115,36 +116,35 @@ export default function Validation() {
                           <MDBInput
                             className="mb-10 mb-xl-5"
                             style={{width: "500px"}}
-                            placeholder="Name"
+                            placeholder="Insurance Company"
                             size="lg"
                           />
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
                           <MDBInput
                             className="mb-10 mb-xl-5"
-                            style={{width: "464px"}}
-                            placeholder="Pharmacy"
+                            style={{width: "462px"}}
+                            placeholder="Health Card #"
                             size="lg"
-                            minlength="16"
-                            maxlength="16"
-                          />
+                            minlength={12}
+                            maxlength={12}
+                          />                          
                         </MDBRow>
                         <MDBRow>
                           <MDBInput
                             className="mb-10 mb-xl-5"
                             style={{width: "500px"}}
-                            placeholder="Employee ID"
+                            placeholder="Insurance ID"
                             size="lg"
-                            minlength="5"
-                            maxlength="5"
+                            minlength="1"
+                            maxlength="9"
                           />
                           <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
                           <MDBInput
                             className="mb-10 mb-xl-5"
                             style={{width: "464px"}}
-                            placeholder="Employee Password"
+                            placeholder="Insurance Password"
                             size="lg"
-                            minlength="3"
-                            maxlength="3"
+                            minlength="4"
                           />
                         </MDBRow>
                         <MDBRow>  

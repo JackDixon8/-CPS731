@@ -9,6 +9,7 @@ import {
   MapsPage,
   Checkout,
   Validation,
+  Prescribe,
 } from "./components";
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="/mapPage" element={<MapsPage />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/validation" element={<Validation />} />
+      <Route path="/prescribe" element={<Prescribe />} />
     </Routes>
 
   </Router>,
