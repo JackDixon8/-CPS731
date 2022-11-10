@@ -34,7 +34,6 @@ export default function UserLinkCreateAccount() {
               <MDBTableBody>
                 <MDBCard
                   className="shadow-2-strong mb-5 mb-lg-0 d-flex"
-                  style={{ width: "100%", borderRadius: "40px" }}
                 >
                   <MDBCardBody className="p2-4">
                     <MDBCol>
@@ -73,7 +72,7 @@ export default function UserLinkCreateAccount() {
                 className="shadow-2-strong mb-5 mb-lg-0"
                 style={{ width: "100%", borderRadius: "40px" }}
               >
-                <MDBCardBody className="p2-4">
+                <MDBCardBody className="p2-4">  
                   <MDBCol>
                     <MDBRow>
                       <MDBCol>
@@ -112,7 +111,8 @@ export default function UserLinkCreateAccount() {
                             minlength="4"
                           />
                         </MDBRow>
-                        <MDBRow>  
+                        <MDBRow
+                        className="mb-10 mb-xl-5">  
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Connect</button>
                         </MDBRow>    
                       </MDBCol>
