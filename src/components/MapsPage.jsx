@@ -42,7 +42,7 @@ export default function MapsPage() {
         <br></br>
         <br></br>
 
-        YOUR MED DOCSSSS ---> THE USER"S MED DOCS
+        YOUR MED DOCSSSS --- THE USER"S MED DOCS
       </div>
     </div>
   );
