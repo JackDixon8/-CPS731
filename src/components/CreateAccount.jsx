@@ -1,4 +1,8 @@
-import React from 'react';
+import { NavLink, useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import { collection, query, where, getDocs, addDoc, doc} from "firebase/firestore"; 
+import { db } from './Rtdb.jsx'
+
 import {
   MDBBtn,
   MDBContainer,
@@ -12,9 +16,40 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-import { NavLink } from 'react-router-dom';
+
 
 function CreateAccount() {
+
+  async function register(event) {
+
+    var name = document.getElementById('registerName').value;
+    var user = document.getElementById('registerEmail').value;
+    var pass = document.getElementById('registerPassword').value;
+    var pass2 = document.getElementById('registerPassword2').value;
+
+    const users = collection(db, "users");
+    const q = query(users, where("username", "==", user), where("password", "==", pass));
+    const querySnapshot = await getDocs(q);
+
+    if (pass !== pass2){
+      alert("Your passwords do not match.");
+    } else if(querySnapshot.size == 1) {
+      alert("A user with this Email already exists.");
+    } else {
+      var data = {
+        name: name,
+        username: user,
+        password: pass
+      };
+
+      await addDoc(users, data);
+
+      console.log("User has been added successfully");
+
+    }
+
+  };
+
   return (
     <MDBContainer fluid className='gradient-custom'>
 
@@ -27,32 +62,27 @@ function CreateAccount() {
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size='lg'/>
-                <MDBInput label='Your Name' id='form1' type='text' className='w-100'/>
+                <MDBInput label='Your Name' id='registerName' type='text' className='w-100'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size='lg'/>
-                <MDBInput label='Your Email' id='form2' type='email'/>
+                <MDBInput label='Your Email' id='registerEmail' type='email'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput label='Password' id='form3' type='password'/>
+                <MDBInput label='Password' id='registerPassword' type='password'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="key me-3" size='lg'/>
-                <MDBInput label='Repeat your password' id='form4' type='password'/>
+                <MDBInput label='Repeat your password' id='registerPassword2' type='password'/>
               </div>
 
-              <div className='mb-4'>
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
-              </div>
 
-              <NavLink className="nav-link" to="/userLink">
 
-              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
-              </NavLink>
+              <MDBBtn className='mb-4' size='lg' onClick={register}>Register</MDBBtn>
             </MDBCol>
 
             <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>

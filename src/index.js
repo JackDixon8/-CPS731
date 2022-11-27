@@ -10,32 +10,24 @@ import {
   Validation,
   Prescribe,
   Test,
-  TrackDelivery,
-  BrowsePharmacies,
   OrderDetails,
   Checkout,
-  CreateAccount,
-  UserLinkCreateAccount,
-  ConnectPrescribe
+  CreateAccount
 } from "./components";
-
 
 ReactDOM.render(
   <Router>
     <Navigation />
+
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/mapPage" element={<MapsPage />} />
       <Route path="/test" element={<Test />} />
-      <Route path="/trackDelivery" element={<TrackDelivery />} />
-      <Route path="/browsePharmacies" element={<BrowsePharmacies />} />
       <Route path="/OrderDetails" element={<OrderDetails />} />
       <Route path="/CreateAccount" element={<CreateAccount />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/validation" element={<Validation />} />
       <Route path="/prescribe" element={<Prescribe />} />
-      <Route path="/userLink" element={<UserLinkCreateAccount />} />
-      <Route path="/connect" element={<ConnectPrescribe />} />
     </Routes>
 
   </Router>,

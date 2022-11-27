@@ -12,8 +12,6 @@ export default function MapsPage() {
     <div className='gradient-custom'>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <Test> </Test>
-
-   
       </div>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <br></br>
