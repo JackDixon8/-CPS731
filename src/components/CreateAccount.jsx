@@ -20,7 +20,11 @@ from 'mdb-react-ui-kit';
 
 function CreateAccount() {
 
+  const navigate = useNavigate();
+
   async function register(event) {
+
+    event.preventDefault();
 
     var name = document.getElementById('registerName').value;
     var user = document.getElementById('registerEmail').value;
@@ -44,7 +48,7 @@ function CreateAccount() {
 
       await addDoc(users, data);
 
-      console.log("User has been added successfully");
+      navigate('/mapPage' , {replace: true, state: { isAuthenticated: true }} );
 
     }
 
