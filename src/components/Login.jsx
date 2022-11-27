@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 import React, {useState } from "react";
 import { collection, query, where, getDocs, getDoc} from "firebase/firestore"; 
 import { db } from './Rtdb.jsx'
@@ -7,8 +7,6 @@ import { db } from './Rtdb.jsx'
 function Login() {
   const [isLoading, setIsLoading] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userName, setUsername] = useState(false)
-  const [password, setPassword] = useState(false)
 
 
   async function handleClick() {
@@ -19,12 +17,25 @@ function Login() {
 
     console.log(querySnapshot.size);
 
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.data()['username'], " => ",  doc.data()['password'],);
-    });
+    // information is correct
+    if (querySnapshot.size == 1){
 
-    setIsLoading(false);
+      setIsLoading(false);
+      setIsAuthenticated(true);
+
+    } else {
+
+      console.log(querySnapshot.size);
+
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.data()['username'], " => ",  doc.data()['password'],);
+      });
+  
+      alert("Your login information is incorrect")
+
+    }
+
     
   }
 
