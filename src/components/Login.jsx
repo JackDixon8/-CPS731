@@ -31,7 +31,7 @@ function Login() {
       setIsLoading(false);
       setIsAuthenticated(true);
 
-      navigate('/mapPage' , {replace: true, state: { isAuthenticated: true }} );
+      navigate('/mapPage' , {replace: true, state: { isAuthenticated: true, username : user}} );
 
     // information is incorrect
     } else {

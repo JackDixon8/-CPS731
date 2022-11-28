@@ -1,5 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useRef, useEffect, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { collection, query, where, getDocs, getDoc} from "firebase/firestore"; 
+import { db } from './Rtdb.jsx'
+
+
 import {
   MDBBtn,
   MDBCard,
@@ -15,6 +19,16 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function Checkout() {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  let auth = location.state.isAuthenticated;
+  let username = location.state.username;
+  let prescriptionList = location.state.prescriptionList;
+
+
+
   return (
     <section className="h-100 h-custom gradient-custom">
       <MDBContainer className="py-5 h-100">

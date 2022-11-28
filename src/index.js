@@ -15,13 +15,17 @@ import {
   CreateAccount,
 } from "./components";
 
+function User(props) {
+  return <h1>Hello {props.match.params.username}!</h1>;
+}
+
 ReactDOM.render(
   <Router>
     <Navigation />
 
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/mapPage" element={<MapsPage />} />
+      <Route path="/mapPage" element={<MapsPage />} component={User} />
       <Route path="/test" element={<Test />} />
       <Route path="/OrderDetails" element={<OrderDetails />} />
       <Route path="/CreateAccount" element={<CreateAccount />} />

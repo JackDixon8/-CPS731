@@ -48,7 +48,7 @@ function CreateAccount() {
 
       await addDoc(users, data);
 
-      navigate('/mapPage' , {replace: true, state: { isAuthenticated: true }} );
+      navigate('/mapPage' , {replace: true, state: { userName: user }} );
 
     }
 

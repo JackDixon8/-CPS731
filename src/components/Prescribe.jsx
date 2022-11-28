@@ -120,13 +120,8 @@ function Prescribe() {
                             <MDBInput
                               id = "refills"
                               className="mb-10 mb-xl-5"
-<<<<<<< Updated upstream
                               style={{width: "115%"}}
                               placeholder="# of Refills "
-=======
-                              style={{width: "300px"}}
-                              placeholder="# of Refills"
->>>>>>> Stashed changes
                               size="lg"
                               minlength="1"
                               maxlength="2"
