@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 
 function Login() {
@@ -25,14 +26,16 @@ function Login() {
                   </div>
 
                   <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-
+                  <div>
+                    <ul className="navbar-nav ml-auto">
+                    </ul>
+                  </div>
                   <hr class="my-4"></hr>
-
+                  <p>or Register with</p>
+                  <NavLink className="nav-link" to="/CreateAccount">
                   <button class="btn btn-lg btn-block btn-primary" style={{backgroundColor: "#dd4b39"}}
-                    type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-                  <button class="btn btn-lg btn-block btn-primary mb-2" style={{backgroundColor: "#3b5998"}}
-                    type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
-
+                    type="submit"><i class="fab fa-google me-2"></i> Register</button>
+                  </NavLink>
                 </div>
               </div>
             </div>
