@@ -225,14 +225,14 @@ export default function Checkout() {
                           <MDBRow>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "482px"}}
+                              style={{width: "195%"}}
                               placeholder="Name"
                               size="lg"
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "482px"}}
+                              style={{width: "180%"}}
                               placeholder="Street Address"
                               size="lg"
                               minlength="16"
@@ -242,23 +242,23 @@ export default function Checkout() {
                           <MDBRow>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "313px"}}
+                              style={{width: "121%"}}
                               placeholder="City"
                               size="lg"
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
 
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "300px"}}
+                              style={{width: "115%"}}
                               placeholder="Province"
                               size="lg"
                               minLength={2}
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "300px"}}
+                              style={{width: "115%"}}
                               placeholder="Postal Code"
                               size="lg"
                               minlength="6"
@@ -303,14 +303,14 @@ export default function Checkout() {
                           <MDBRow>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "500px"}}
+                              style={{width: "195%"}}
                               placeholder="Name"
                               size="lg"
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "464px"}}
+                              style={{width: "180%"}}
                               placeholder="Card Number"
                               size="lg"
                               minlength="16"
@@ -320,16 +320,16 @@ export default function Checkout() {
                           <MDBRow>
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "500px"}}
+                              style={{width: "195%"}}
                               placeholder="Expiry Date                                                           MM/YY"
                               size="lg"
                               minlength="5"
                               maxlength="5"
                             />
-                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
                               className="mb-10 mb-xl-5"
-                              style={{width: "464px"}}
+                              style={{width: "180%"}}
                               placeholder="CVV"
                               size="lg"
                               minlength="3"
