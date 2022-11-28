@@ -13,8 +13,6 @@ import {
   OrderDetails,
   Checkout,
   CreateAccount,
-  ConnectPrescribe,
-  BrowsePharmacies
 } from "./components";
 
 ReactDOM.render(
@@ -30,8 +28,6 @@ ReactDOM.render(
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/validation" element={<Validation />} />
       <Route path="/prescribe" element={<Prescribe />} />
-      <Route path="/ConnectPrescribe" element={<ConnectPrescribe />} />
-      <Route path="/browsePharmacies" element={<BrowsePharmacies />} />
     </Routes>
 
   </Router>,
