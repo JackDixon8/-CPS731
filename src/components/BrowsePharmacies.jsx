@@ -15,11 +15,6 @@ export default function BrowsePharmacies() {
         <Test> </Test>
       </div>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
         <form action="/" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search to populate list of Pharmacies</span>

@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+
+import { collection, query, where, getDocs, getDoc} from "firebase/firestore"; 
+import { db } from './Rtdb.jsx'
+
+
 import {
   MDBCol,
   MDBContainer,
