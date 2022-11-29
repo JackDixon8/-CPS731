@@ -20,7 +20,9 @@ export default function Basic() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log(location.state)
+  let auth = location.state.isAuthenticated;
+  let username = location.state.username;
+  let prescriptionList = location.state.prescriptions;
 
   return (
         <MDBContainer className="gradient-custom vh-100">
