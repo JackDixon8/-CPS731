@@ -21,18 +21,15 @@ export default function Basic() {
   const navigate = useNavigate();
 
   let auth = location.state.isAuthenticated;
+  let permissions = location.state.permissions;
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
   let order = location.state.order;
+  let tax = order.total - (order.total / 1.13) ;
 
-  if (!auth) {
-    navigate('/' , {replace: true})
-  };
-
-  console.log(auth);
-  console.log(username);
-  console.log(prescriptionList);
-  console.log(order);
+  async function handleClick() {
+    navigate('/mapPage' , {replace: true, state: { isAuthenticated: auth, username : username, permissions:permissions, order: order}});
+  }
 
   return (
         <MDBContainer className="gradient-custom vh-100">
@@ -45,7 +42,7 @@ export default function Basic() {
                         className="modal-title text-uppercase mb-5"
                         id="exampleModalLabel"
                       >
-                        Johnatan Miller
+                        {username}
                       </MDBTypography>
                       <MDBTypography
                         tag="h4"
@@ -67,39 +64,48 @@ export default function Basic() {
                         }}
                       />
 
-                      <div className="d-flex justify-content-between">
-                        <p className="fw-bold mb-0">Ether Chair(Qty:1)</p>
-                        <p className="text-muted mb-0">$1750.00</p>
-                      </div>
+                    
+                      {prescriptionList.map((val, key) => {
+                        return (
+                          <div key={key}>
+                            <div className="d-flex justify-content-between">
+                              <p className="fw-bold mb-0"> {val.medicationName} Qty.{val.quantity}</p>
+                              <p className="text-muted mb-0">${val.costPerUnit * val.quantity}</p>
+                            </div>
+                          </div>
+                        )
+                      })}
+                      
 
                       <div className="d-flex justify-content-between">
                         <p className="small mb-0">Shipping</p>
-                        <p className="small mb-0">$175.00</p>
+                        <p className="small mb-0">$5.00</p>
                       </div>
 
                       <div className="d-flex justify-content-between pb-1">
                         <p className="small">Tax</p>
-                        <p className="small">$200.00</p>
+                        <p className="small">{tax.toFixed(2)}</p>
                       </div>
 
                       <div className="d-flex justify-content-between">
                         <p className="fw-bold">Total</p>
                         <p className="fw-bold" style={{ color: "#35558a" }}>
-                          $2125.00
+                        {order.total.toFixed(2)}
                         </p>
                       </div>
+                      
                     </MDBContainer>
 
                     <MDBContainer className="d-flex justify-content-center border-top-0 py-4">
-                      <NavLink className="nav-link" to="/trackdelivery">
+
                       <MDBBtn
+                      onClick={handleClick}
                         size="lg"
                         style={{ backgroundColor: "#35558a" }}
                         className="mb-1"
                       >
                         Track your order
                       </MDBBtn>
-                      </NavLink>
                     </MDBContainer>
             </MDBCol>
           </MDBRow>

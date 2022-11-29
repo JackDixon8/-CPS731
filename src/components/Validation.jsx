@@ -52,6 +52,7 @@ export default function Validation() {
     };
     await addDoc(insurances, data);
     alert("Insurance Connected!");
+    navigate("/prescribe", {replace:true, state: {isAuthenticated: true}});
   }
   return(
     <section className="gradient-custom">
