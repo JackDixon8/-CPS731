@@ -23,6 +23,12 @@ export default function Basic() {
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
+  let order = location.state.order;
+
+  console.log(auth);
+  console.log(username);
+  console.log(prescriptionList);
+  console.log(order);
 
   return (
         <MDBContainer className="gradient-custom vh-100">

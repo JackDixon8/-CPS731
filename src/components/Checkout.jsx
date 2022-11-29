@@ -48,7 +48,7 @@ export default function Checkout() {
 
     var total = (sum + 5)*1.13;
 
-    var data = {
+    var order = {
       streetName: streetName,
       city: city,
       province: province,
@@ -56,7 +56,7 @@ export default function Checkout() {
       total: total,
     };
 
-    navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList}} );
+    navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList, order: order}} );
   }
 
   return (
