@@ -66,7 +66,7 @@ export default function Checkout() {
 
     await addDoc(orders, order);
 
-    navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList, order: order}} );
+    navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, permissions:permissions, prescriptions: prescriptionList, order: order}} );
   }
 
   return (
