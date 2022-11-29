@@ -25,7 +25,9 @@ export default function Checkout() {
 
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
-  let prescriptionList = location.state.prescriptionList;
+  let prescriptionList = location.state.prescriptions;
+
+  console.log(prescriptionList);
 
 
 
@@ -47,7 +49,11 @@ export default function Checkout() {
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
-                <tr>
+
+              {prescriptionList.map((val, key) => {
+                return (
+
+                <tr key={key}>
                   <th scope="row">
                     <div className="d-flex align-items-center">
                       {/* <img
@@ -58,8 +64,9 @@ export default function Checkout() {
                         alt="Book"
                       /> */}
                       <div className="flex-column ms-4">
-                        <p className="mb-2">Medicine 1</p>
-                        <p className="mb-0">Description 1</p>
+                        <p className="mb-2">Medication: {val.medicationName}</p>
+                        <p className="mb-0">Directions: {val.directions}</p>
+                        <p className="mb-0">Dosage: {val.dosage}</p>
                       </div>
                     </div>
                   </th>
@@ -75,7 +82,7 @@ export default function Checkout() {
                         type="number"
                         size="sm"
                         style={{ width: "50px" }}
-                        defaultValue={2}
+                        defaultValue={val.quantity}
                       />
 
                       <MDBBtn className="px-2" color="link">
@@ -85,53 +92,12 @@ export default function Checkout() {
                   </td>
                   <td className="align-middle">
                     <p className="mb-0" style={{ fontWeight: "500" }}>
-                      $9.99
+                      ${val.costPerUnit * val.quantity}
                     </p>
                   </td>
                 </tr>
-                <tr>
-                  <th scope="row">
-                    <div className="d-flex align-items-center">
-                      {/* <img
-                        src="https://i.imgur.com/Oj1iQUX.webp"
-                        fluid
-                        className="rounded-3"
-                        style={{ width: "120px" }}
-                        alt="Book"
-                      /> */}
-                      <div className="flex-column ms-4">
-                        <p className="mb-2">
-                            Medicine 2
-                        </p>
-                        <p className="mb-0">Description 2</p>
-                      </div>
-                    </div>
-                  </th>
-                  <td className="align-middle">
-                    <div class="d-flex flex-row align-items-center ">
-                      <MDBBtn className="px-2" color="link">
-                        <MDBIcon fas icon="minus" />
-                      </MDBBtn>
-
-                      <MDBInput
-                        min={0}
-                        type="number"
-                        size="sm"
-                        style={{ width: "50px" }}
-                        defaultValue={1}
-                      />
-
-                      <MDBBtn className="px-2" color="link">
-                        <MDBIcon fas icon="plus" />
-                      </MDBBtn>
-                    </div>
-                  </td>
-                  <td className="align-middle">
-                    <p className="mb-0" style={{ fontWeight: "500" }}>
-                      $13.50
-                    </p>
-                  </td>
-                </tr>
+                )
+              })}
                 <tr>
                   <th scope="row">
                     <div className="d-flex align-items-center">

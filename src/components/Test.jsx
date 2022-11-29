@@ -1,24 +1,51 @@
-import React, { useState } from 'react';
-import Map from '@urbica/react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React, { useState, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+
 
 export default function Test() {
-  const [viewport, setViewport] = useState({
-    latitude: 43.6532,
-    longitude: -79.3832,
-    zoom: 11
-  });
-  return(
-  <Map
-    style={{ width: '40%', height: '40vh' }}
-    mapStyle='mapbox://styles/mapbox/light-v9'
-    accessToken={'pk.eyJ1IjoiamFja2RpeG9uOCIsImEiOiJjbGFhNm04eDQwMjN2M29tcW4xdTc2bTFtIn0.C_7t9rnmqC7AnHklldLmaQ'}
-    latitude={viewport.latitude}
-    longitude={viewport.longitude}
-    zoom={viewport.zoom}
-    onViewportChange={setViewport}
-  />
 
+  function successLocation(position) {
+    setupMap([position.coords.longitude, position.coords.latitude])
+  }
+
+  function errorLocation() {
+    setupMap([-2.24, 53.48])
+  }
+
+  function setupMap(center) {
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: center,
+      zoom: 15
+    })
+
+    const nav = new mapboxgl.NavigationControl()
+    map.addControl(nav)
+
+    var directions = new Directions({
+      accessToken: mapboxgl.accessToken
+    })
+
+    map.addControl(directions, "top-left")
+  }
+
+
+  useEffect(() => {
+    async function renderMap() {
+      mapboxgl.accessToken =
+      "pk.eyJ1IjoiamFja2RpeG9uOCIsImEiOiJjbGFhNm04eDQwMjN2M29tcW4xdTc2bTFtIn0.C_7t9rnmqC7AnHklldLmaQ"
+    
+      navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+        enableHighAccuracy: true
+      })
+  };
+  renderMap()
+}, [])
+
+  return(
+    <div id="map"></div>
   );
 }
   

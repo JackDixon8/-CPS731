@@ -27,6 +27,7 @@ function Prescribe() {
     var quantity = document.getElementById('quantity').value;
     var refills = document.getElementById('refills').value;
     var directions = document.getElementById('directions').value;
+    var cost = document.getElementById('costPerUnit').value;
 
     const prescriptions = collection(db, "prescriptions");
     
@@ -37,7 +38,8 @@ function Prescribe() {
       dosage: dosage,
       quantity: quantity,
       refills: refills,
-      directions: directions
+      directions: directions,
+      costPerUnit: cost
     };
 
     await addDoc(prescriptions, data);
@@ -138,6 +140,18 @@ function Prescribe() {
                               minlength="5"
                             />
                           </MDBRow>
+
+                          <MDBRow>
+                          <MDBInput
+                              id = "costPerUnit"
+                              className="mb-10 mb-xl-5"
+                              style={{width: "1016px"}}
+                              placeholder="costPerUnit"
+                              size="lg"
+                              minlength="5"
+                            />
+                          </MDBRow>
+
                           <MDBRow>  
                           <button class="btn btn-primary btn-lg btn-block" type="submit" onClick={prescribe} >Create</button>
                           </MDBRow>    

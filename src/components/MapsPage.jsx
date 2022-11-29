@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Map from 'react-map-gl';
 import Test from './Test';
-import Navigation from './Navigation';
 import './index.css' 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
@@ -10,7 +8,6 @@ import { db } from './Rtdb.jsx'
 
 
 export default function MapsPage() {
-
 
   const [prescriptionList, setPrescriptionList] = useState([]);
 
@@ -44,19 +41,21 @@ export default function MapsPage() {
     
   }
 
-  
-
-
-
   return(
     
     <div className='gradient-custom'>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-        <Test> </Test>
+        <Test/>
       </div>
+
+      <div style={{height:'250px', width:'100px'}}>
+
+      </div>
+
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
           <button type="submit" onClick={handleClick}>Order Medication</button>
       </div>
+      
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
 
         <ul>YOUR MED DOCSSSS --- THE USER"S MED DOCS
