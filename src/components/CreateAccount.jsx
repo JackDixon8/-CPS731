@@ -56,7 +56,7 @@ function CreateAccount() {
       if (permissions == "user"){
         navigate('/mapPage' , {replace: true, state: { userName: user, permissions:permissions }} );
       } else {
-        navigate('/prescribe' , {replace: true, state: { userName: user, permissions:permissions }} );
+        navigate('/validation' , {replace: true, state: { userName: user, permissions:permissions }} );
       }
 
       

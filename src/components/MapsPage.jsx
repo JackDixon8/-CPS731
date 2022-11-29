@@ -19,6 +19,8 @@ export default function MapsPage() {
   let permissions = location.state.permissions;
   let order = location.state.order;
 
+  console.log(document.querySelector("#mapbox-directions-origin-input > div > input[type=text]"))
+
   if (!auth) {
     navigate('/' , {replace: true})
   };
@@ -28,7 +30,6 @@ export default function MapsPage() {
 
   const orders = collection(db, "orders");
   const r = query(orders, where("username", "==", username));
-
 
   // prescriptions exist
   useEffect(() => {
@@ -47,9 +48,10 @@ export default function MapsPage() {
   // order exists
   useEffect(() => {
     async function trackOrder(){
+      
 
     };
-  }, [order])
+  }, [])
 
   async function handleClick() {
 

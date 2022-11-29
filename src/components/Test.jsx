@@ -25,7 +25,8 @@ export default function Test() {
     map.addControl(nav)
 
     var directions = new Directions({
-      accessToken: mapboxgl.accessToken
+      accessToken: mapboxgl.accessToken,
+      interactive: false
     })
 
     map.addControl(directions, "top-left")
