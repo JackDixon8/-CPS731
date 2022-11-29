@@ -19,8 +19,6 @@ export default function MapsPage() {
   let permissions = location.state.permissions;
   let order = location.state.order;
 
-  console.log(document.querySelector("#mapbox-directions-origin-input > div > input[type=text]"))
-
   if (!auth) {
     navigate('/' , {replace: true})
   };
