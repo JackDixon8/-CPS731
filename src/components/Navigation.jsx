@@ -6,7 +6,7 @@ function Navigation() {
     <div className="navigation ">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/mapPage">
+          <NavLink className="navbar-brand" to="/">
             ReX
           </NavLink>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState } from 'react';
+import { NavLink, useLocation, useNavigate  } from "react-router-dom";
 import { collection, query, where, getDocs, addDoc, doc} from "firebase/firestore";
 import { db } from './Rtdb.jsx'
 
@@ -21,6 +22,14 @@ function Prescribe() {
   // needs user permissions checking
   // needs auth checking
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  let auth = location.state.isAuthenticated;
+
+  if (!auth) {
+    navigate('/' , {replace: true})
+  };
 
   async function prescribe(event){
     event.preventDefault();

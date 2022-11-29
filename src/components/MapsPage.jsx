@@ -16,28 +16,40 @@ export default function MapsPage() {
 
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
+  let permissions = location.state.permissions;
+  let order = location.state.order;
 
+  if (!auth) {
+    navigate('/' , {replace: true})
+  };
 
   const prescriptions = collection(db, "prescriptions");
   const q = query(prescriptions, where("patientName", "==", username));
+
+  const orders = collection(db, "orders");
+  const r = query(orders, where("username", "==", username));
 
   useEffect(() => {
     async function listPrescriptions() {
       const list = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
         list.push(doc.data());
-
       });
       setPrescriptionList(list);
-  };
-  listPrescriptions();
-}, [])
+    };
+    listPrescriptions();
+  }, [])
+
+  useEffect(() => {
+    async function trackOrder(){
+
+    };
+  }, [order])
 
   async function handleClick() {
 
-    navigate('/checkout' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList}} );
+    navigate('/checkout' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList, permissions:permissions}} );
     
   }
 

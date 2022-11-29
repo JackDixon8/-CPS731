@@ -25,6 +25,10 @@ export default function Basic() {
   let prescriptionList = location.state.prescriptions;
   let order = location.state.order;
 
+  if (!auth) {
+    navigate('/' , {replace: true})
+  };
+
   console.log(auth);
   console.log(username);
   console.log(prescriptionList);

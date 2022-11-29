@@ -30,6 +30,9 @@ function CreateAccount() {
     var user = document.getElementById('registerEmail').value;
     var pass = document.getElementById('registerPassword').value;
     var pass2 = document.getElementById('registerPassword2').value;
+    var permissions = document.getElementById('permissions').value;
+
+    console.log(permissions);
 
     const users = collection(db, "users");
     const q = query(users, where("username", "==", user), where("password", "==", pass));
@@ -38,17 +41,27 @@ function CreateAccount() {
     if (pass !== pass2){
       alert("Your passwords do not match.");
     } else if(querySnapshot.size == 1) {
-      alert("A user with this Email already exists.");
-    } else {
+      alert("A user with this Email already exists."); 
+    } else if (permissions == 'user' || permissions == "doc"){
+
       var data = {
         name: name,
         username: user,
-        password: pass
+        password: pass,
+        permissions: permissions
       };
 
       await addDoc(users, data);
 
-      navigate('/mapPage' , {replace: true, state: { userName: user }} );
+      if (permissions == "user"){
+        navigate('/mapPage' , {replace: true, state: { userName: user, permissions:permissions }} );
+      } else {
+        navigate('/prescribe' , {replace: true, state: { userName: user, permissions:permissions }} );
+      }
+
+      
+    } else {
+      alert("Please register as a user or a doc"); 
 
     }
 
@@ -82,6 +95,11 @@ function CreateAccount() {
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="key me-3" size='lg'/>
                 <MDBInput label='Repeat your password' id='registerPassword2' type='password'/>
+              </div>
+
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="key me-3" size='lg'/>
+                <MDBInput label='user or provider' id='permissions' type='password'/>
               </div>
 
 

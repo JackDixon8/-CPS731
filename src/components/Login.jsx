@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import React, {useState} from "react";
 import { collection, query, where, getDocs, getDoc} from "firebase/firestore"; 
 import { db } from './Rtdb.jsx'
@@ -6,9 +6,9 @@ import { db } from './Rtdb.jsx'
 
 function Login() {
 
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   async function login(event) {
@@ -26,12 +26,22 @@ function Login() {
     // information is correct
     if (querySnapshot.size == 1){
 
-      console.log(querySnapshot.size);
+      var permissions;
 
-      setIsLoading(false);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        permissions = doc.data().permissions;
+      });
+
       setIsAuthenticated(true);
 
-      navigate('/mapPage' , {replace: true, state: { isAuthenticated: true, username : user}} );
+      if (permissions == 'doc') {
+        navigate('/prescribe' , {replace: true, state: { isAuthenticated: true, username : user, permissions:permissions}} );
+      } else {
+        navigate('/mapPage' , {replace: true, state: { isAuthenticated: true, username : user, permissions:permissions}} );
+      }
+
+      
 
     // information is incorrect
     } else {

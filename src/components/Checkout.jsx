@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { collection, query, where, getDocs, getDoc} from "firebase/firestore"; 
+import { collection, query, where, getDocs, getDoc, addDoc} from "firebase/firestore"; 
 import { db } from './Rtdb.jsx'
 
 
@@ -26,6 +26,12 @@ export default function Checkout() {
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
+  let permissions = location.state.permissions;
+
+  // return to login if not authenticated
+  if (!auth) {
+    navigate('/' , {replace: true})
+  };
 
   // getting the costs
   var sum = 0;
@@ -36,7 +42,7 @@ export default function Checkout() {
   }
   prescriptionList.map(sumCost);
 
-  function handleClick(event) {
+  async function handleClick(event) {
 
     event.preventDefault();
 
@@ -47,6 +53,8 @@ export default function Checkout() {
 
     var total = (sum + 5)*1.13;
 
+    const orders = collection(db, "orders");
+
     var order = {
       username: username,
       streetName: streetName,
@@ -55,6 +63,8 @@ export default function Checkout() {
       postalCode: postalCode,
       total: total,
     };
+
+    await addDoc(orders, order);
 
     navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList, order: order}} );
   }
