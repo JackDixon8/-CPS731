@@ -27,14 +27,13 @@ export default function Checkout() {
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
 
+  // getting the costs
   var sum = 0;
-
   function sumCost(item){
     let x = item.quantity;
     let y = item.costPerUnit;
     sum += x*y;
   }
-
   prescriptionList.map(sumCost);
 
   function handleClick(event) {
@@ -49,6 +48,7 @@ export default function Checkout() {
     var total = (sum + 5)*1.13;
 
     var order = {
+      username: username,
       streetName: streetName,
       city: city,
       province: province,
