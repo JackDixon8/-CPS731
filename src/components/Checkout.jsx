@@ -27,12 +27,7 @@ export default function Checkout() {
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
 
-  var streetName = document.getElementById('typeEmailX-2').value;
-  var pass = document.getElementById('typePasswordX-2').value;
-
   var sum = 0;
-
-  
 
   function sumCost(item){
     let x = item.quantity;
@@ -42,23 +37,25 @@ export default function Checkout() {
 
   prescriptionList.map(sumCost);
 
+  function handleClick(event) {
 
-  function orderdetails(){
+    event.preventDefault();
+
+    var streetName = document.getElementById('streetName').value;
+    var city = document.getElementById('city').value;
+    var province = document.getElementById('province').value;
+    var postalCode = document.getElementById('postalCode').value;
+
     var total = (sum + 5)*1.13;
 
     var data = {
-      order
-      streetName: ,
-      city: medication,
-      province: reason,
-      postalCode: dosage,
-      total: quantity,
+      streetName: streetName,
+      city: city,
+      province: province,
+      postalCode: postalCode,
+      total: total,
     };
 
-  
-  }
-
-  function handleClick() {
     navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList}} );
   }
 
