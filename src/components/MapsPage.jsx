@@ -29,6 +29,8 @@ export default function MapsPage() {
   const orders = collection(db, "orders");
   const r = query(orders, where("username", "==", username));
 
+
+  // prescriptions exist
   useEffect(() => {
     async function listPrescriptions() {
       const list = [];
@@ -37,10 +39,12 @@ export default function MapsPage() {
         list.push(doc.data());
       });
       setPrescriptionList(list);
+      
     };
     listPrescriptions();
   }, [])
 
+  // order exists
   useEffect(() => {
     async function trackOrder(){
 
@@ -56,21 +60,13 @@ export default function MapsPage() {
   return(
     
     <div className='gradient-custom'>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-        <Test/>
-      </div>
-
-      <div style={{height:'250px', width:'100px'}}>
-
-      </div>
-
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-          <button type="submit" onClick={handleClick}>Order Medication</button>
-      </div>
-      
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-
-        <ul>YOUR MED DOCSSSS --- THE USER"S MED DOCS
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col'>
+            <Test/>
+          </div>
+          <div className='col'>
+          <ul>YOUR MED DOCSSSS --- THE USER"S MED DOCS
           {prescriptionList.map((val, key) => {
             return (
               <li key={key}>
@@ -87,6 +83,22 @@ export default function MapsPage() {
             )
           })}
         </ul>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+          <button type="submit" onClick={handleClick}>Order Medication</button>
+      </div>
+      
+      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+
+
 
       </div>
     </div>
