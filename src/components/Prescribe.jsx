@@ -18,6 +18,10 @@ import {
 } from "mdb-react-ui-kit";
 
 function Prescribe() {
+  // needs user permissions checking
+  // needs auth checking
+
+
   async function prescribe(event){
     event.preventDefault();
     var name = document.getElementById('patientName').value;

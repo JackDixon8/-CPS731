@@ -26,12 +26,39 @@ export default function Checkout() {
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
-  console.log(location.state)
+
+  var streetName = document.getElementById('typeEmailX-2').value;
+  var pass = document.getElementById('typePasswordX-2').value;
+
+  var sum = 0;
+
+  
+
+  function sumCost(item){
+    let x = item.quantity;
+    let y = item.costPerUnit;
+    sum += x*y;
+  }
+
+  prescriptionList.map(sumCost);
+
+
+  function orderdetails(){
+    var total = (sum + 5)*1.13;
+
+    var data = {
+      order
+      streetName: ,
+      city: medication,
+      province: reason,
+      postalCode: dosage,
+      total: quantity,
+    };
+
+  
+  }
 
   function handleClick() {
-    console.log(auth);
-    console.log(username);
-    console.log(prescriptionList);
     navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList}} );
   }
 
@@ -53,6 +80,7 @@ export default function Checkout() {
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
+                
 
               {prescriptionList.map((val, key) => {
                 return (
@@ -60,13 +88,6 @@ export default function Checkout() {
                 <tr key={key}>
                   <th scope="row">
                     <div className="d-flex align-items-center">
-                      {/* <img
-                        src="https://i.imgur.com/2DsA49b.webp"
-                        fluid
-                        className="rounded-3"
-                        style={{ width: "120px" }}
-                        alt="Book"
-                      /> */}
                       <div className="flex-column ms-4">
                         <p className="mb-2">Medication: {val.medicationName}</p>
                         <p className="mb-0">Directions: {val.directions}</p>
@@ -76,24 +97,11 @@ export default function Checkout() {
                   </th>
                   
                   <td className="align-middle">
-                    <div class="d-flex flex-row align-items-center">
-                      <MDBBtn className="px-2" color="link">
-                        <MDBIcon fas icon="minus" />
-                      </MDBBtn>
-
-                      <MDBInput
-                        min={0}
-                        type="number"
-                        size="sm"
-                        style={{ width: "50px" }}
-                        defaultValue={val.quantity}
-                      />
-
-                      <MDBBtn className="px-2" color="link">
-                        <MDBIcon fas icon="plus" />
-                      </MDBBtn>
-                    </div>
+                    <p className="mb-0" style={{ fontWeight: "500" }}>
+                      {val.quantity}
+                    </p>
                   </td>
+
                   <td className="align-middle">
                     <p className="mb-0" style={{ fontWeight: "500" }}>
                       ${val.costPerUnit * val.quantity}
@@ -134,7 +142,7 @@ export default function Checkout() {
                   </td>
                   <td className="align-middle">
                     <p className="mb-0" style={{ fontWeight: "500" }}>
-                      $27.49
+                      ${sum+5}
                     </p>
                   </td>
                 </tr>
@@ -152,7 +160,7 @@ export default function Checkout() {
                   </td>
                   <td className="align-middle">
                     <p className="mb-0" style={{ fontWeight: "500" }}>
-                      $3.57
+                      ${(sum+5)*0.13}
                     </p>
                   </td>
                 </tr>
@@ -170,7 +178,7 @@ export default function Checkout() {
                   </td>
                   <td className="align-middle">
                     <p className="mb-0" style={{ fontWeight: "1000" }}>
-                      $31.06
+                      ${((sum+5)*1.13).toFixed(2)}
                     </p>
                   </td>
                 </tr>
@@ -215,6 +223,7 @@ export default function Checkout() {
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
+                              id='streetName'
                               className="mb-10 mb-xl-5"
                               style={{width: "180%"}}
                               placeholder="Street Address"
@@ -225,6 +234,7 @@ export default function Checkout() {
                           </MDBRow>
                           <MDBRow>
                             <MDBInput
+                              id='city'
                               className="mb-10 mb-xl-5"
                               style={{width: "121%"}}
                               placeholder="City"
@@ -233,6 +243,7 @@ export default function Checkout() {
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p> 
 
                             <MDBInput
+                              id='province'
                               className="mb-10 mb-xl-5"
                               style={{width: "115%"}}
                               placeholder="Province"
@@ -241,6 +252,7 @@ export default function Checkout() {
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                             <MDBInput
+                              id='postalCode'
                               className="mb-10 mb-xl-5"
                               style={{width: "115%"}}
                               placeholder="Postal Code"
@@ -286,6 +298,7 @@ export default function Checkout() {
                         <MDBCol>
                           <MDBRow>
                             <MDBInput
+                              id='cardName'
                               className="mb-10 mb-xl-5"
                               style={{width: "195%"}}
                               placeholder="Name"
@@ -293,6 +306,7 @@ export default function Checkout() {
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
+                              id='cardNumber'
                               className="mb-10 mb-xl-5"
                               style={{width: "180%"}}
                               placeholder="Card Number"
@@ -303,6 +317,7 @@ export default function Checkout() {
                           </MDBRow>
                           <MDBRow>
                             <MDBInput
+                              id='expiry'
                               className="mb-10 mb-xl-5"
                               style={{width: "195%"}}
                               placeholder="Expiry Date                                                           MM/YY"
@@ -312,6 +327,7 @@ export default function Checkout() {
                             />
                             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </p> 
                             <MDBInput
+                              id='CVV'
                               className="mb-10 mb-xl-5"
                               style={{width: "180%"}}
                               placeholder="CVV"
