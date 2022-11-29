@@ -13,33 +13,21 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate  } from "react-router-dom";
 
 export default function Basic() {
-  const [basicModal, setBasicModal] = useState(false);
 
-  const toggleShow = () => setBasicModal(!basicModal);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  console.log(location.state)
 
   return (
-    <>
-      <section >
         <MDBContainer className="gradient-custom vh-100">
           <MDBRow className="justify-content-center align-items-center h-100 text-center">
             <MDBCol>
-              <MDBBtn color="light"  onClick={toggleShow}>
-                <MDBIcon fas icon="info me-2" /> Get information
-              </MDBBtn>
-              <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
-                <MDBModalDialog>
-                  <MDBModalContent>
-                    <MDBModalHeader className="border-bottom-0">
-                      <MDBBtn
-                        className="btn-close"
-                        color="none"
-                        onClick={toggleShow}
-                      ></MDBBtn>
-                    </MDBModalHeader>
-                    <MDBModalBody className="text-start text-black p-4">
+
+                    <MDBContainer className="text-start text-black p-4">
                       <MDBTypography
                         tag="h5"
                         className="modal-title text-uppercase mb-5"
@@ -88,9 +76,9 @@ export default function Basic() {
                           $2125.00
                         </p>
                       </div>
-                    </MDBModalBody>
+                    </MDBContainer>
 
-                    <MDBModalFooter className="d-flex justify-content-center border-top-0 py-4">
+                    <MDBContainer className="d-flex justify-content-center border-top-0 py-4">
                       <NavLink className="nav-link" to="/trackdelivery">
                       <MDBBtn
                         size="lg"
@@ -100,14 +88,9 @@ export default function Basic() {
                         Track your order
                       </MDBBtn>
                       </NavLink>
-                    </MDBModalFooter>
-                  </MDBModalContent>
-                </MDBModalDialog>
-              </MDBModal>
+                    </MDBContainer>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </section>
-    </>
   );
 }

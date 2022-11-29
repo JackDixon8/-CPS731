@@ -26,10 +26,14 @@ export default function Checkout() {
   let auth = location.state.isAuthenticated;
   let username = location.state.username;
   let prescriptionList = location.state.prescriptions;
+  console.log(location.state)
 
-  console.log(prescriptionList);
-
-
+  function handleClick() {
+    console.log(auth);
+    console.log(username);
+    console.log(prescriptionList);
+    navigate('/orderdetails' , {replace: true, state: { isAuthenticated: auth, username : username, prescriptions: prescriptionList}} );
+  }
 
   return (
     <section className="h-100 h-custom gradient-custom">
@@ -317,9 +321,9 @@ export default function Checkout() {
                             />
                           </MDBRow>
                           <MDBRow> 
-                          <NavLink className="nav-link" to="/orderdetails"> 
-                          <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
-                          </NavLink>
+                          <button class="btn btn-primary btn-lg btn-block" type="submit"
+                            onClick={handleClick}
+                          >Place Order</button>
                           </MDBRow>    
                         </MDBCol>
                       </MDBRow>
